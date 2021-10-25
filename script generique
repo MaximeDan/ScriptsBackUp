@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#déclaration variables générales
+today=$(date +%Y-%m-%d)
+destination_backup =/backup
+cheminvhost =/etc/apache2/sites-available
+
+#test de la variable today
+#echo $today
+
+#appelle le fichier avec les variables spé
+source $1
+
+#Export DB
+mysqldump -u $loginDB -p$pwdDB $nomDB> $backupfileDB
+
+
+#Création d'archive
+tar -czvf $backup_file $vhost $website $backupfileDB
+
+
+#nettoyage du fichier backup
+rm backupfileDB
+
+

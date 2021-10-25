@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+#Variable spécifiques à mon blog
+FQDN=blog.di21.fr
+backup_file=$destination_backup/$backup_$FQDN"_"$today.tar.gz
+vhost=$cheminvhost/wordpress.conf
+website=/var/www/FQDN
+nomDB=wordpress
+loginDB=wordpress
+pwdDB=***
+backupfileDB=$destination_backup/export_$nomDB"_"$today.sql
+
